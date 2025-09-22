@@ -1,76 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My GitHub Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Roboto', sans-serif; background: #f7f7f7; color: #222; }
-    header { background: #23272f; color: #fff; padding: 2rem 0; text-align: center; }
-    nav { margin-top: 1rem; }
-    nav a { color: #fff; text-decoration: none; margin: 0 1rem; font-weight: bold; transition: color 0.2s; }
-    nav a:hover { color: #ffcc00; }
-    main { max-width: 900px; margin: 2rem auto; padding: 2rem; background: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-    h1, h2 { margin-bottom: 1rem; }
-    .about { margin-bottom: 2rem; }
-    .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
-    .project-card { background: #ececec; padding: 1.5rem; border-radius: 8px; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 1px 5px rgba(0,0,0,0.08); }
-    .project-card:hover { transform: translateY(-5px) scale(1.03); box-shadow: 0 4px 15px rgba(80,80,80,0.15); }
-    .project-card a { text-decoration: none; color: #23272f; font-weight: bold; display: inline-block; margin-top: 0.5rem; }
-    .project-card a:hover { color: #ffcc00; }
-    .contact-form { margin-top: 2rem; }
-    label { display: block; margin-top: 1rem; }
-    input, textarea { width: 100%; padding: 0.75rem; margin-top: 0.5rem; border: 1px solid #bbb; border-radius: 4px; font-size: 1rem; }
-    button { margin-top: 1.2rem; padding: 0.7rem 1.5rem; background: #23272f; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; transition: background 0.2s;}
-    button:hover { background: #495167; }
-    @media (max-width: 700px) {
-      .projects { grid-template-columns: 1fr; }
-      main { padding: 1rem; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Core styles and layout */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #f3f3f3, #222);
+            color: #222;
+            transition: background 0.5s;
+        }
+        .container { max-width: 1080px; margin: auto; padding: 2rem; }
+        header { display: flex; align-items: center; justify-content: space-between; }
+        nav a { margin: 0 1rem; color: inherit; text-decoration: none; font-weight: bold; }
+        nav a:hover { border-bottom: 2px solid #444; }
+        .avatar { border-radius: 100px; width: 120px; }
+        .section { margin: 4rem 0; }
+        h2 { font-size: 2rem; margin-bottom: 1rem; }
+        /* Advanced enhancements */
+        .glow:hover { box-shadow: 0 0 8px #39ff14, 0 0 16px #639; }
+        .theme-toggle { cursor: pointer; padding: 0.3rem 1rem; background: #333; color: #fff; border: none; border-radius: 20px;}
+        .project-cards { display: flex; flex-wrap: wrap; gap: 2rem; }
+        .project-card { background: #fff; border-radius: 12px; padding: 1rem; flex: 1 1 300px; transition: transform 0.2s; }
+        .project-card:hover { transform: scale(1.04); box-shadow: 0 8px 24px rgba(60,90,150,0.2);}
+        /* Responsive design */
+        @media (max-width: 720px) {
+            .project-cards { flex-direction: column; }
+            .container { padding: 1rem; }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Jane Doe</h1>
-    <p>Quantitative Finance Researcher | PyTorch | Reinforcement Learning</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-  <main>
-    <section class="about" id="about">
-      <h2>About Me</h2>
-      <p>Hello! I am a computational finance researcher specializing in financial option pricing, deep learning, and model validation. I enjoy solving mathematical problems and building code frameworks for market analytics.</p>
-    </section>
-    <section class="projects" id="projects">
-      <div class="project-card">
-        <h3>American Option Pricing RL</h3>
-        <p>Implementation of reinforcement learning algorithms for pricing American options with real-market data. (Python, PyTorch)</p>
-        <a href="https://github.com/yourusername/option-rl" target="_blank">View on GitHub</a>
-      </div>
-      <div class="project-card">
-        <h3>Physics-Informed Neural Networks (PINNs)</h3>
-        <p>PINN-based pricing models for stochastic volatility and model error reduction. (PINNs, Heston Model)</p>
-        <a href="https://github.com/yourusername/pinn-finance" target="_blank">View on GitHub</a>
-      </div>
-      <!-- Add more project cards as needed -->
-    </section>
-    <section class="contact-form" id="contact">
-      <h2>Contact</h2>
-      <form>
-        <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Your Name" required>
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="your@email.com" required>
-        <label for="message">Message</label>
-        <textarea id="message" rows="4" placeholder="How can I help you?" required></textarea>
-        <button type="submit">Send</button>
-      </form>
-    </section>
-  </main>
+    <div class="container">
+        <header>
+            <div>
+                <img src="your-photo.jpg" class="avatar" alt="Avatar">
+                <span style="font-size:1.5rem; font-weight:bold;">Your Name</span>
+            </div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#blog">Blog</a>
+                <a href="#certificates">Certificates</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+        </header>
+
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <p>Hi, I'm an aspiring developer focused on data science and web technologies...</p>
+        </section>
+
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <div class="project-cards">
+                <div class="project-card glow">
+                    <h3>Project Title</h3>
+                    <p>Short description of the project.</p>
+                    <a href="https://github.com/yourgithub/project1" target="_blank">GitHub</a>
+                    <a href="https://live-demo.com" target="_blank">Live Demo</a>
+                </div>
+                <!-- Repeat for each project -->
+            </div>
+        </section>
+
+        <section id="blog" class="section">
+            <h2>Blog</h2>
+            <p>Latest articles and tutorials...</p>
+            <!-- Embedd recent posts or integrate RSS feed -->
+        </section>
+
+        <section id="certificates" class="section">
+            <h2>Certificates & Badges</h2>
+            <ul>
+                <li><strong>IT Specialist</strong> - Microsoft</li>
+                <li><strong>Python Programming</strong> - OpenEDG</li>
+                <!-- Add all achieved certificates -->
+            </ul>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Contact Me</h2>
+            <form id="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required />
+                <input type="email" name="email" placeholder="Your Email" required />
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </div>
+    <script>
+        // Dark/light mode toggle
+        function toggleTheme() {
+            if(document.body.style.background === 'linear-gradient(135deg, #222, #f3f3f3)') {
+                document.body.style.background = 'linear-gradient(135deg, #f3f3f3, #222)';
+                document.body.style.color = '#222';
+            } else {
+                document.body.style.background = 'linear-gradient(135deg, #222, #f3f3f3)';
+                document.body.style.color = '#f3f3f3';
+            }
+        }
+        // Contact form handler (example only, replace with integration code)
+        document.getElementById('contact-form').onsubmit = function(e){
+            e.preventDefault();
+            alert("Form submitted (demo only). Integrate with email or Google Sheets!");
+        }
+    </script>
 </body>
 </html>
